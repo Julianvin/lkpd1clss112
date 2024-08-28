@@ -40,15 +40,15 @@
     <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
         <div class="card shadow-sm p-4" style="width: 90%; max-width: 800px;">
             <h5 class="card-title text-center mb-4">Image Customizer</h5>
-            <div class="image-container mb-4">
+            <div class="image-container mb-4 ms-3">
                 <img id="image1" src="https://cleanmemes.com/wp-content/uploads/2024/07/img_1231-dsqz-1.jpg?w=600" alt="gambar 1" class="active square">
                 <img id="image2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ1oJlS8Yz1AYxsshw02qlyH40zkeNe6776w&s" alt="gambar 2" class="square">
                 <img id="image3" src="https://www.the-sun.com/wp-content/uploads/sites/6/2023/10/KS-crunchy-cat-comp.jpg?w=620" alt="gambar 3" class="square">
             </div>
             <div class="mb-4">
                 <div class="mb-3">
-                    <label for="imageSelector" class="form-label">Pilih Gambar:</label>
-                    <select id="imageSelector" class="form-select">
+                    <label for="gantigambar" class="form-label">Pilih Gambar:</label>
+                    <select id="gantigambar" class="form-select">
                         <option value="image1">Cat 1</option>
                         <option value="image2">Cat 2</option>
                         <option value="image3">Cat 3</option>
@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="shapeSelector" class="form-label">Pilih Bentuk:</label>
-                    <select id="shapeSelector" class="form-select">
+                    <label for="bentuk" class="form-label">Pilih Bentuk:</label>
+                    <select id="bentuk" class="form-select">
                         <option value="square">Kotak</option>
                         <option value="round">Lingkaran</option>
                         <option value="triangle">Segitiga</option>
@@ -65,30 +65,31 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="colorSelector" class="form-label">Pilih Warna:</label>
-                    <input type="color" id="colorSelector" class="form-control form-control-color">
+                    <label for="gantiwarna" class="form-label">Pilih Warna:</label>
+                    <input type="color" id="gantiwarna" class="form-control form-control-color">
                 </div>
 
-                <button id="applyChanges" class="btn btn-primary">Ganti</button>
+                <button id="krm" class="btn btn-primary">Ganti</button>
             </div>
         </div>
     </div>
 
     <script>
-        document.getElementById('applyChanges').addEventListener("click", function() {
-            var selectedImage = document.getElementById(document.getElementById('imageSelector').value);
-            var shape = document.getElementById('shapeSelector').value;
-            var color = document.getElementById('colorSelector').value;
+        document.getElementById('krm').addEventListener("click", function() {
+    var selectedImage = document.getElementById(document.getElementById('gantigambar').value);
+    var shape = document.getElementById('bentuk').value;
+    var color = document.getElementById('gantiwarna').value;
 
-            var images = document.querySelectorAll('.image-container img');
-            images.forEach(function(image) {
-                image.classList.remove('active', 'square', 'round', 'triangle');
-                image.style.borderColor = "transparent";
-            });
+    var images = document.querySelectorAll('.image-container img');
+    images.forEach(function(image) {
+        image.classList.remove('active', 'square', 'round', 'triangle');
+        image.style.borderColor = "transparent"; 
+    });
 
-            selectedImage.classList.add('active', shape);
-            selectedImage.style.borderColor = color;
-        });
+    selectedImage.classList.add('active', shape);
+    selectedImage.style.borderColor = color; 
+});
+
     </script>
 </body>
 </html>
